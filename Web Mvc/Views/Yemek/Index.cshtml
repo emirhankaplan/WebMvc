@@ -1,0 +1,90 @@
+﻿@model List<Yemek>
+
+@if (TempData["basarili"] != null)
+{
+	
+	<h5 style="color:red">@TempData["basarili"]</h5>
+
+}
+
+<div class="container">
+
+	<div class="row pt-3 pb-4"
+		<div>
+			 <h1>Yemekler</h1>
+		</div>
+		</div>
+	  <table class="table table-bordered">
+		 <thead>
+		  <tr>
+			    <th>
+					Id
+			    </th>
+
+				<th>
+
+					YemekAdi
+
+			    </th>
+
+				<th>
+
+				    Tanim
+
+				</th>
+
+				<th>
+
+					Fiyat
+
+				</th>
+
+				
+
+
+
+				<th>
+
+				</th>
+				<th>
+
+				</th>
+
+		  </tr>
+		 </thead>
+
+		<tbody>
+			@foreach(var yemek in Model)
+			{
+			<tr>
+				<td>@yemek.Id</td>
+				<td>@yemek.YemekAdi</td>
+				<td>@yemek.Tanim</td>
+				<td>@yemek.Fiyat</td>
+				
+
+
+				<td>
+					<a asp-controller="Yemek" asp-action="Guncelle" asp-route-id="@yemek.Id" type="button" class="btn btn-success" style="width:250px">Güncelle</a>
+				</td>
+					<td>
+						<a asp-controller="Yemek" asp-action="Sil" asp-route-id="@yemek.Id" type="button" class="btn btn-danger" style="width:250px">Sil</a>
+					</td>
+			</tr>
+			}
+
+		</tbody>
+
+
+	  </table>
+
+	  <div class="row pt-3 pb-2">
+		  <div>
+			<a asp-controller="Yemek" asp-action="Ekle" class="btn btn-success" type="button">
+				Yemek Ekle
+			</a>
+		  </div>
+
+	  </div>
+
+</div>

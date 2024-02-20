@@ -1,0 +1,27 @@
+﻿@model YemekTuru
+
+<form method="post">
+	<input asp-for="Id" hidden />
+
+	<div class="border p-3 mt-5">
+		<div class="row pb-3">
+			<h2 class="text-primary">Yemek Türü Sil</h2>
+			</hr>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Ad" class="p-0"></label>
+			<input asp-for="Ad" disabled class="form-control" />
+			
+		</div>
+
+		<button type="submit" class="btn btn-success" style="width:250px">Yemek Türü Sil</button>
+
+		<a asp-controller="YemekTuru" asp-action="Index" class="btn btn-success" style="width:250px">
+			Yemek Türlerine Geri Dön
+		</a>
+
+	</div>
+
+
+</form>
